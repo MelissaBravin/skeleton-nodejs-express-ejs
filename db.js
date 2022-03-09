@@ -12,4 +12,4 @@ let connect = function(){
   return pool.connect();
 }
 
-module.exports = { conecct }
+module.exports = { connect }

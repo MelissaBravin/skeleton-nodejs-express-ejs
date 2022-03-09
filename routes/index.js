@@ -1,9 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+const Autor = require ("../models/autor");
+router.get('/', async function(req, res, next) {
+  const autores = await Autor.selecionar();
+  res.json(autores.rows);
 });
 
 module.exports = router;
+
