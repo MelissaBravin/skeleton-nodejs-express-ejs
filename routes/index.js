@@ -30,18 +30,23 @@ router.get('/livros', async function(req, res, next) {
   res.json(livros.rows);
 });
 
-router.post('/inserir_livros', async function(req, res, next) {
+router.post('/inserirlivros', async function(req, res, next) {
   const livros = await Livro.inserir_livros(req.body);
   res.json(livros.rows); 
 });
 
-router.put('/atualizar_livros', async function(req, res, next) {
+router.put('/atualizarlivros', async function(req, res, next) {
   const livros = await Livro.atualizar_livros(req.body);
   res.json(livros.rows);
 });
 
-router.delete('/deletar_livros', async function(req, res, next) {
+router.delete('/deletarlivros', async function(req, res, next) {
   const livros = await Livro.deletar_livros(req.body);
+  res.json(livros.rows);
+});
+
+router.get('/selecionarAutor', async function(req, res, next) {
+  const livros = await Livro.selecionar_autor(req.body);
   res.json(livros.rows);
 });
 
