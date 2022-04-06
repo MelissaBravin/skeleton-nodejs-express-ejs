@@ -17,7 +17,7 @@ class Autor{
     const values = [data.nome, data.sobrenome, data.dt_nascimento, data.id];
     return await connect.query(sql, values);
   }
-  static async deletar(){
+  static async deletar(data){
     const connect = await db.connect();
     const sql = "DELETE from autores WHERE id=$1";
     const values = [data.id]
